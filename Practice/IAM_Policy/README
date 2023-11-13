@@ -1,0 +1,23 @@
+# Created IAM User, IAM Policy and attached policy to user 
+
+1. Provider Configuration:
+
+provider "aws": Specifies the AWS provider and the region to be used throughout the Terraform configuration.
+
+2. IAM User Creation:
+
+resource "aws_iam_user": Defines the creation of an IAM user named "myuser."
+
+3. IAM Policy Creation:
+
+resource "aws_iam_policy": Defines the creation of an IAM policy named "mypolicy."
+The policy is a JSON document allowing the user to perform the "s3:ListBucket" action on any S3 bucket ("Resource": "*" means any resource).
+
+4. IAM Policy Attachment:
+
+resource "aws_iam_user_policy_attachment": Attaches the previously created IAM policy to the IAM user.
+user: Refers to the IAM user created earlier (aws_iam_user.example.name).
+policy_arn: Refers to the ARN (Amazon Resource Name) of the IAM policy (aws_iam_policy.example.arn).
+
+
+In summary, this Terraform script creates an IAM user named "myuser," defines an IAM policy named "mypolicy" that allows listing any S3 bucket, and attaches this policy to the IAM user. This is a basic example, and in a real-world scenario, you would customize the policy to grant the necessary permissions based on your specific requirements.
