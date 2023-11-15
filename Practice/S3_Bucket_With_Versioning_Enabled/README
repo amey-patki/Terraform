@@ -1,0 +1,26 @@
+# Explanation:
+
+1. Provider Configuration:
+
+provider "aws": Specifies the AWS provider and the region to be used throughout the Terraform configuration.
+
+2.S3 Bucket Creation:
+
+resource "aws_s3_bucket": Defines the creation of an S3 bucket named "my-terraform-bucket."
+bucket: Specifies the unique name for the S3 bucket.
+acl: Sets the access control list (ACL) for the bucket to "private."
+
+3.Versioning Configuration:
+
+versioning: Specifies a block to enable versioning for the S3 bucket.
+enabled = true: Enables versioning for the bucket.
+
+4. Static Website Hosting Configuration:
+
+website: Specifies a block to configure static website hosting for the S3 bucket.
+index_document: Specifies the default index document for the website (e.g., "index.html").
+error_document: Specifies the error document for the website (e.g., "error.html").
+
+In summary, this Terraform script not only creates an S3 bucket with versioning enabled but also configures it as a static website.
+The index.html file will be served as the default document, and the error.html file will be displayed in case of errors.
+ This is useful for hosting static websites directly from an S3 bucket.
