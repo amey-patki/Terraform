@@ -1,4 +1,4 @@
-# Created IAM User, IAM Policy and attached policy to user 
+# Created IAM User, IAM Policy and attached policy to user on AWS using terraform.
 
 1. Provider Configuration:
 
